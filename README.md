@@ -37,6 +37,27 @@ A Next.js application for AI image generation with shadcn/ui and Tailwind CSS.
 - **Error Recovery** - Exponential backoff retry logic for failed API calls
 - **Performance Optimized** - Efficient queue operations and minimal re-renders
 
+## AI-Assisted Development
+
+This project was developed with the assistance of AI tools to enhance productivity and code quality:
+
+### 🤖 Claude Sonnet 4
+- **Frontend Component Development** - Created React components with descriptive prompts explaining desired look and functionality
+- **Styling & Design** - Generated Tailwind CSS classes and component styling based on visual requirements
+- **Code Quality Review** - Validated coding practices for maintainability and scalability
+- **Architecture Guidance** - Provided insights on component structure and state management patterns
+
+### 🧠 GPT-5
+- **Documentation** - Assisted in writing comprehensive README files and technical documentation
+- **Code Comments** - Helped generate clear and descriptive code comments
+- **Project Structure** - Provided guidance on file organization and project architecture
+
+### 💡 AI Development Benefits
+- **Faster Iteration** - Rapid prototyping of UI components and layouts
+- **Best Practices** - Ensured adherence to React and Next.js best practices
+- **Code Quality** - Maintained consistent coding standards and patterns
+- **Documentation** - Comprehensive project documentation and code explanations
+
 ## Getting Started
 
 First, run the development server:
