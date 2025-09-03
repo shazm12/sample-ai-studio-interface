@@ -60,7 +60,23 @@ This project was developed with the assistance of AI tools to enhance productivi
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up your development environment:
+
+1. **Install dependencies**  
+   Make sure you have [Node.js](https://nodejs.org/) (v18 or later) and [npm](https://www.npmjs.com/) installed.  
+   Then, install project dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+2. **Start the development server**
 
 ```bash
 npm run dev
@@ -72,7 +88,10 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Open the app**  
+   Visit [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+> _Tip: You can use your preferred package manager (npm, yarn, pnpm, or bun) throughout the setup process._
 
 ## Tech Stack
 
