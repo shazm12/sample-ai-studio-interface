@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { generateImage, GenerateImageResponse, generateImageWithRetry } from '@/app/actions/generate-image';
+import { responseQueue } from '@/app/utils/response-history';
 
 interface PromptStyleBoxProps {
     onPromptChange?: (prompt: string) => void;
@@ -38,6 +39,10 @@ const PromptStyleBox: React.FC<PromptStyleBoxProps> = ({
         onStyleChange?.(value);
     };
 
+    const saveResponseInHistory = (response: GenerateImageResponse) => {
+        responseQueue.enqueue(response);
+    };
+
     // Handle generate button click
     const handleGenerate = async () => {
         if (!prompt.trim() || !selectedStyle) return;
@@ -54,13 +59,16 @@ const PromptStyleBox: React.FC<PromptStyleBoxProps> = ({
 
             if (res.status === 'success') {
                 setResult(res);
+                saveResponseInHistory(res);
             } else {
                 const retryRes = await generateImageWithRetry({
                     prompt: prompt.trim(),
                     style: selectedStyle
                 });
                 setResult(retryRes);
+                saveResponseInHistory(retryRes);
             }
+            
         } catch (error) {
             console.error('Generation error:', error);
             setError('Failed to generate image. Please try again.');
