@@ -1,12 +1,15 @@
 "use client"
+
 import FileUpload from "@/components/file-upload";
+import SidePanel from "@/components/side-panel";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
+      {/* Main Container */}
+      <div className="h-screen flex flex-col">
+        {/* Title Section */}
+        <div className="text-center py-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">
             AI Studio
           </h1>
@@ -15,14 +18,17 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* File Upload Section */}
-          <section className="bg-card border rounded-lg p-6 shadow-sm">
-            <FileUpload
-              maxSizeMB={10}
-            />
-          </section>
+        {/* Content Container */}
+        <div className="flex flex-1 gap-8 px-6 pb-8">
+          {/* Left Side - Side Panel */}
+          <div className="flex-shrink-0">
+            <SidePanel />
+          </div>
+          
+          {/* Right Side - Upload Image - Centered */}
+          <div className="flex-1 flex items-center justify-center">
+            <FileUpload maxSizeMB={10} />
+          </div>
         </div>
       </div>
     </main>
